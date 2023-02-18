@@ -14,3 +14,6 @@ Things to do:
     Settings for Character Privacy
     Niche Customizable Settings
     Setting up the QR code scan for getting the book to the website and the website store that also gets you the book
+
+
+Hi my is Michael
