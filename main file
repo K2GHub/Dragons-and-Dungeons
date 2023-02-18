@@ -1,0 +1,216 @@
+import java.util.*;
+/*
+ * Your Pope, Saint Pope Michael VI (has wide penis, circumsized)
+ * -"There is no Jew nor Greek in Chirst Jesus, 
+ *   but there is Jew or Greek in these hands" -M.W. Malnati
+ *   
+ *   to do, write try catches for ints and switch cases
+ *   make it so it converts this information into a csv file that is read and
+ *   make into a dnd 5e character sheet (with pronouns lol)?
+ *   
+ */
+public class CharacterGenerator
+{
+    //feats to add, grappler (improved), overwhelm martial and overwhelm spells
+    //overwhelm martial: gives +1 in str, dex, con, melee attacks with weapon
+    //deal excess damage in 10ft radius if the target dies
+    //overwhelming caster: gives +1 to wis, cha, or int, spells deal excess
+    //damage in 10ft radius if target dies?
+    
+    public static void main (String[] args) 
+    {
+        //boolean to run through main menu set to false when user exists system
+        boolean runningThroughMainMenu = true;
+        /*
+         * boolean to run through submenu when user creates a new account set to false 
+         * when user log outs of the new account
+        */
+        boolean runningThroughNewAccount = true;
+        /*
+         * boolean to run through submenu when user logs in to an existing account 
+         * set to false when user log outs of the existing account
+        */
+        boolean runningThroughExistingAccount = true;
+        /*
+         * message that prints when user calls the main method
+         */
+        System.out.println("Welcome to M.W.Malnati Character Generator");
+        System.out.println("type in a number and type 'enter' to select an option");
+        System.out.println("this includes the 'go back option'");
+        System.out.println("WARNING!!!");
+        System.out.println("any data not saved will not be saved when going back");
+        System.out.println("Have agency, be creative, enjoy");
+        //runs as long as the main menu needs to be called/the system is not exited
+        while(runningThroughMainMenu)
+        {
+            //prints main menu message
+            printMainMenu();
+            //intializes scanner scnr
+            Scanner scnr = new Scanner(System.in);
+            //has the scanner point at the next line
+            String currentLine = scnr.nextLine();
+            //switch case based on whatever number the user enters
+            switch(currentLine)
+            {
+                //performs option 1, creating new account
+                case "1":
+                {
+                    GenerateANewCharacter();
+                    break;
+                }
+                //performs option 2, logging into an existing accout
+                case "2":
+                {
+                    LoadCharacter();
+                    break;
+                }
+                //performs option 3, exiting the system
+                case "3":
+                {
+                    exitSystem();
+                    runningThroughMainMenu = false;
+                    break;
+                }
+                default:
+                {
+                    System.out.println("Invalid selection. Please try again");
+                }
+            }
+        }
+    }
+    
+    public static void GenerateANewCharacter()
+    {
+        Scanner scnr = new Scanner(System.in);
+        while(true)
+        {
+            //do not pick dwarf then subtypes just have subtypes listed
+            System.out.println("Pick a Race:");
+            System.out.print("1. Aarakocra ");
+            System.out.print("2. Aasimar ");
+            //protector, other types of aasimar
+            System.out.print("3. Aetherborn ");
+            System.out.print("4. Air Genasi ");
+            System.out.print("5. Autognome ");
+            System.out.print("6. Aven ");
+            System.out.print("7. Bugbear ");
+            System.out.print("8. Centaur ");
+            System.out.print("9. Changeling ");
+            System.out.print("10. Custom ");
+            System.out.print("11. Dhamphir ");
+            System.out.print("12. Dragonborn ");
+            System.out.print("13. Duergar ");
+            System.out.print("14. Deep Gnome ");
+            System.out.print("fix numbers lol. Dwarf ");
+            //hill dwarf, mountain dwarf
+            System.out.print("15. Earth Genasi ");
+            System.out.print("16. Eladrin ");
+            System.out.print("17. Elf ");
+            //subtypes to add, high elf, wood elf, dark elf
+            System.out.print("18. Fairy ");
+            System.out.print("19. Fire Genasi ");
+            System.out.print("20. Firbolg ");
+            System.out.print("21. Giff ");
+            System.out.print("22. Githyanki ");
+            System.out.print("23. Githzerai ");
+            System.out.print("24. Gnome ");
+            //forest gnome, rock gnome, deep gnome
+            System.out.print("25. Goblin ");
+            System.out.print("26. Goliath ");
+            System.out.print("27. Grung ");
+            System.out.print("28. Hadozee ");
+            System.out.print("29. Half-Elf ");
+            System.out.print("30. Half-Orc ");
+            System.out.print("31. Harengon ");
+            System.out.print("32. Hexblood ");
+            System.out.print("33. Halfling ");
+            //lightfoot halfing, ghostwise halfing, stout halfing
+            System.out.print("34. Hobgoblin ");
+            System.out.print("35. Human (Not-Variant) ");
+            System.out.print("36. Human (Variant) ");
+            System.out.print("37. Kalashtar ");
+            System.out.print("38. Kender ");
+            System.out.print("fix numbers lol. Kenku ");
+            System.out.print("39. Khenra ");
+            System.out.print("40. Kor ");
+            System.out.print("41. Kobold ");
+            System.out.print("42. Leonin ");
+            System.out.print("43. Lizardfolk ");
+            System.out.print("44. Locathah ");
+            System.out.print("45. Loxodon ");
+            System.out.print("46. Merfolk ");
+            System.out.print("fix numbers lol. Minotaur ");
+            System.out.print("47. Naga ");
+            System.out.print("48. Owlfolk ");
+            System.out.print("49. Owlin ");
+            System.out.print("50. Orc ");
+            System.out.print("51. Plasmoid ");
+            System.out.print("52. Reborn ");
+            System.out.print("53. Rabbitfolk ");
+            System.out.print("54. Revenant ");
+            System.out.print("55. Satyr ");
+            System.out.print("56. Sea Elf ");
+            System.out.print("57. Shadar-Kai ");
+            System.out.print("58. Shifter ");
+            System.out.print("59. Simic Hybrid ");
+            System.out.print("60. Siren ");
+            System.out.print("61. Tabaxi ");
+            System.out.print("62. Thri-Kreen ");
+            System.out.print("63. Tiefling ");
+            System.out.print("64. Tortle ");
+            System.out.print("65. Triton ");
+            System.out.print("66. Vampire ");
+            System.out.print("67. Viashino ");
+            System.out.print("68. Vedalken ");
+            System.out.print("69. Water Genasi ");
+            System.out.print("70. Warforged ");
+            System.out.print("71. Yuan-Ti ");
+            System.out.print("72. Verdan");
+            int choice = scnr.nextInt();
+            scnr.nextLine();
+            switch(choice)
+            {
+                case 1:
+                System.out.println("Option 2.1");
+                break;
+                case 2:
+                System.out.println("Option 2.2");
+                break;
+                case 3:
+                return;
+                default:
+                System.out.println("Invalid option. Try again.");
+            }
+            /*
+             * once they select race give information and say make your character this race, do not make your character this race
+             */
+        }
+    }
+    
+    public static void LoadCharacter()
+    {
+        System.out.println("lolgot em");
+    }
+    
+    public static void printMainMenu(/*String currentLine*/)
+    {
+        //prints main menu
+        System.out.println("MAIN MENU");
+        //if the user selects 1 then a new account is created
+        System.out.println("1.) Generate a new character");
+        /*
+         * if the user selects 2 then they may enter an account number to log in
+         * to if the account exists
+         */
+        System.out.println("2.) Load existing character");
+        //if the user selects 3 they exit the entire system and ends the console all together
+        System.out.println("3.) Exit the character genenrator");
+        //asks user to enter in an int for selecting an option in the submenu
+        System.out.println("Please enter your selection: ");
+    }
+    
+    public static void exitSystem()
+    {
+        System.out.println("Exiting the character generator");
+    }
+}
