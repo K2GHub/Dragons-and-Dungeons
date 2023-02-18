@@ -11,6 +11,7 @@ Things to do:
     Select a Race, Gives Drop-Down Menus on Race with custom origins
   MISC:
     Make Dice Calculator (d6, d8, d10, d20, copy software from internet)
+    Add Level Up, Level Down, Advantage, Disadvantage, Also choice to save data if level down
     Settings for Character Privacy
     Niche Customizable Settings
     Setting up the QR code scan for getting the book to the website and the website store that also gets you the book
