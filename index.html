@@ -16,10 +16,59 @@
                 <li><a href="#">My Collection</a></li>
                 <li><a href="#">My Encounters</a></li>
             </ul>
+
+            <li>
+              
+
+            <h1>Classes</h1>
+
+            <form id="make_checkbox_select">
+            
+              <select name="make">
+                  <option data-count="2" value="Cleric">Cleric</option>
+                  <option data-count="23" value="Fighter">Fighter</option>
+                  <option data-count="433" value="Rogue">Rogue</option>
+                  <option data-count="45" value="Wizard">Wizard</option>
+              </select>
+              
+              <input type="submit" />
+              
+            </form>
+            
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+            <script src=""C:\Users\Malna\OneDrive\Desktop\test folder\Dragons and Dungeons\cleric.html""></script>
+
+            <script>
+              $(function() {
+                var mySelectCheckbox = new checkbox_select({
+                  selector: "#make_checkbox_select",
+                  selected_translation: "selectat",
+                  all_translation: "Toate marcile",
+                  not_found: "Nici unul gasit",
+            
+                  // Event during initialization
+                  onApply: function(e) {
+                    if (e.selected === "Cleric") {
+                      window.location.href = "cleric.html";
+                    } else {
+                      alert("Custom Event: " + e.selected);
+                    }
+                  }
+                });
+              });
+            </script>
+            
+            
+
+            
+                      
+            </li>
+
+
         </li>
         <li><a href = "#">Game Rules</a>
             <ul>
-                <li><a href="#">Classes</a></li>
                 <li><a href="#">Spells</a></li>
                 <li><a href="#">Races</a></li>
             </ul>
